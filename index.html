@@ -45,11 +45,11 @@
           <!-- Row A -->
           <div class="grid grid-cols-7 items-center mt-7 gap-8">
             <p class="text-gray-500 font-medium text-lg">A</p>
-            <button class="btn text-gray-500 font-medium text-lg">A1</button>
-            <button class="btn text-gray-500 font-medium text-lg">A2</button>
+            <button onclick="selectSeat(this)" class="btn text-gray-500 font-medium text-lg">A1</button>
+            <button onclick="selectSeat(this)" class="btn text-gray-500 font-medium text-lg">A2</button>
             <div class="col-span-2"></div>
-            <button class="btn text-gray-500 font-medium text-lg">A3</button>
-            <button class="btn text-gray-500 font-medium text-lg">A4</button>
+            <button onclick="selectSeat(this)" class="btn text-gray-500 font-medium text-lg">A3</button>
+            <button onclick="selectSeat(this)" class="btn text-gray-500 font-medium text-lg">A4</button>
           </div>
 
           <!-- Row B -->
@@ -127,16 +127,16 @@
           <div class="border-b border-gray-400 border-dashed"></div>
 
           <div class="my-5">
-            <h1 class="text-center font-extrabold text-red-500 text-2xl">
+            <h1 id="worningText" class="text-center font-extrabold text-red-500 text-2xl">
               You have not selected any seat.
             </h1>
 
             <!-- seat history -->
 
-            <div class="bg-slate-100 px-4 rounded-xl">
+            <div class="bg-slate-100 px-4 rounded-xl hidden" id="seatPrices">
               <div class="rounded-lg p-8 flex justify-between">
                 <p class="flex text-lg font-semibold">
-                  Seat<span
+                  Seat<span id="seatNumber"
                     class="text-xs text-white bg-green-500 p-1 rounded-full font-bold w-6 h-6 text-center"
                     >0</span
                   >
@@ -145,7 +145,33 @@
                 <p class="text-lg font-semibold">Price</p>
               </div>
               <div class="border-b-2 border-dashed border-white"></div>
-              <p>oweut</p>
+
+              <!-- ticket details container -->
+              <div  id="seatContainer" class="space-y-2">
+                
+              </div>
+              <div class="border-b-2 border-b-neutral-400"></div>
+              <div class="flex justify-between my-3">
+                <h1 class="font-semibold text-lg">Total Price</h1>
+                <h1 id="totalPrice" class="font-semibold text-lg">***</h1>
+              </div>
+              <!-- coupon -->
+              <div class="coupon flex">
+                <label class="form-control w-full">
+                  <input disabled id="couponEl"
+                    type="text"
+                    placeholder="Have any coupon?"
+                    class="input input-bordered w-full max-w-xs"
+                  />
+                </label>
+                <button disabled id="copuonBtn" class="btn bg-green-500 text-white font-bold text-lg">
+                  Apply
+                </button>
+              </div>
+              <div class="flex justify-between my-3">
+                <h1 class="font-semibold text-lg">Grand Total</h1>
+                <h1 class="font-semibold text-lg">***</h1>
+              </div>
             </div>
           </div>
         </div>
